@@ -14,8 +14,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Mover el tanque hacia adelante
-        transform.Translate(Vector3.forward);
-
+        transform.Translate( (Vector3.forward * Time.deltaTime) * 20);
         
+
     }
 }
