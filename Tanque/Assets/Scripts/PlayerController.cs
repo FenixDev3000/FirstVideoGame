@@ -5,6 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    //Velocidad del vehiculo
+    public float speed = 5.0f;
+    //Velocidad de giro
+
     void Start()
     {
         
@@ -14,7 +19,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Mover el tanque hacia adelante
-        transform.Translate( (Vector3.forward * Time.deltaTime) * 20);
+        transform.Translate( (Vector3.forward * Time.deltaTime) * speed);
         
 
     }
