@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
-
-    //Velocidad del vehiculo
+   //Variables de manejo
     public float speed = 5.0f;
-    //Velocidad de giro
+    public float turnSpeed = 0.0f;
+    public float horizontalInput;
+    public float forwardInput;
+
 
     void Start()
     {
         
     }
-
-    // Update is called once per frame
     void Update()
     {
-        //Mover el tanque hacia adelante
-        transform.Translate( (Vector3.forward * Time.deltaTime) * speed);
+        //Asignacion de configuraciones teclado
+        horizontalInput = Input.GetAxis("Horizontal");
+        forwardInput = Input.GetAxis("Vertical");
+        //Movilidad de vehiculo
+        transform.Translate( Vector3.forward * Time.deltaTime * speed * forwardInput);
+        transform.Rotate(Vector3.up, turnSpeed * horizontalInput * Time.deltaTime);
+        
         
 
     }
